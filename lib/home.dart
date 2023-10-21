@@ -206,29 +206,7 @@ class _GameScreenState extends State<GameScreen> {
       }
     }
 
-    // Check diagonals
-    if (displayXO[0] == displayXO[4] &&
-        displayXO[0] == displayXO[8] &&
-        displayXO[0] != '') {
-      setState(() {
-        resultDeclaration = 'Player ' + displayXO[0] + ' Wins!';
-        matchedIndexes.addAll([0, 4, 8]);
-        stopTimer();
-        _updateScore(displayXO[0]);
-      });
-      return;
-    }
-    if (displayXO[2] == displayXO[4] &&
-        displayXO[2] == displayXO[6] &&
-        displayXO[2] != '') {
-      setState(() {
-        resultDeclaration = 'Player ' + displayXO[2] + ' Wins!';
-        matchedIndexes.addAll([2, 4, 6]);
-        stopTimer();
-        _updateScore(displayXO[2]);
-      });
-      return;
-    }
+
 
     // Check for a draw
     if (!winnerFound && filledBoxes == 9) {
